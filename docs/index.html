@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QR Code Generator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>QR Code Generator</h1>
+  <div class="controls">
+    <input id="textInput" placeholder="Enter text or URL" />
+    <label for="sizeRange">Size: <span id="sizeLabel">256</span>px</label>
+    <input id="sizeRange" type="range" min="64" max="1024" value="256">
+    <button id="generateBtn">Generate</button>
+    <button id="downloadBtn" disabled>Download PNG</button>
+  </div>
+  <div id="dropZone" class="drop-zone" tabindex="0">
+    Drag & drop text or .txt file here, or click to paste.
+  </div>
+  <div id="qrWrap" class="qr-wrap" aria-hidden="true">
+    <canvas id="qrCanvas" draggable="true"></canvas>
+    <a id="qrLink" download="qrcode.png" style="display:none"></a>
+  </div>
+  <p class="note">Tip: You can drag the QR image to your desktop or click Download.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
